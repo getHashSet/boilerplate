@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'; // To use Redux and Store.
-import { increment, decrement } from '../../actions';
-import PropTypes from 'prop-types';
+import {setHeader, increment, decrement } from '../../actions';
 
 export default function Home(props) {
     //////////////////////////////////
@@ -10,6 +9,13 @@ export default function Home(props) {
     const counter = useSelector(state => state.counter);
     const dispatch = useDispatch();
     const header = useSelector(state => state.headerTag);
+
+    //////////////////////////////////
+    // Hooks
+    //////////////////////////////////
+    useEffect(() => {
+        dispatch(setHeader("Home Page"));
+    })
 
     return (
         <div>
