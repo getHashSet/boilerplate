@@ -16,8 +16,6 @@ const bodyParser = require('body-parser'); // Parses JSON files.
 const morgan = require('morgan'); // display helpful information on the server side logs.
 const path = require('path'); // path will connect directory together. Most common example is res.sendFile(path.join(__dirname, "/boilerplate/src/pages/Home"));
 const app = express(); // assign express to a variable.
-const MongoStore = require('connect-mongo')(session);
-const mongoose = require('mongoose');
 const routes = require('./controllers'); // connect index.js inside the controller directory.
 
 
@@ -41,23 +39,6 @@ app.use(
 	})
 )
 app.use(bodyParser.json());
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/local_db", //check for local database using mongoDB this may be substituted for the database name in the .env file
-	{
-		useNewUrlParser: true,
-		useUnifiedTopology: true
-	}).catch(err => {
-		// console.log(err);
-	})
-
-app.use(
-	session({
-		secret: process.env.APP_SECRET || 'this is the default passphrase',
-		store: new MongoStore({ mongooseConnection: mongoose.connection }),
-		resave: false,
-		saveUninitialized: false
-	})
-);
 
 
 // =================================== //

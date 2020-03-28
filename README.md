@@ -38,6 +38,7 @@ $ npm install redux react-redux
 $ npm install react-router-dom
 $ npm install aws-sdk
 $ npm install express morgan path axios body-parser
+$ npm run build
 ```
 
 ## .gitignore & .env
@@ -112,4 +113,11 @@ app.get("*", (req, res) => {
 	res.sendFile(path.join(__dirname, "./boilerplate/build/index.html")); // if you change the name of the react app be sure to change it here.
 });
 
+```
+
+## Start 
+
+When running the app in localhost be sure start by using the following command.
+```
+npm run start:dev
 ```
