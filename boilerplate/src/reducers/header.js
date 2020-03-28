@@ -1,9 +1,13 @@
-const headerReducer = (state = "My H1 tag", action) => {
+//////////////////////////////////
+// Set the state for <h1> tags
+//////////////////////////////////
+
+const headerReducer = (state = "", action) => {
     switch(action.type) {
         case 'HEADER':
             return action.payload;
         default:
-            return 'My H1 tag.'
+            return 'hello, world'
     };
 };
 export default headerReducer;

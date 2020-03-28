@@ -1,20 +1,53 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement } from './actions';
+//////////////////////////////////////
+// This gets injected into index.html
+//////////////////////////////////////
 
-function App() {
-  const counter = useSelector(state => state.counter);
-  const dispatch = useDispatch();
-  const header = useSelector(state => state.h1Tag);
+import React, { Component } from 'react'; // To use components from React library.
+import { Route, Switch, Redirect } from 'react-router-dom'; // To use react friendly navigation.
+import Home from './pages/Home'; // stage home page.
+import Error from './pages/Error'; // stage 404 page.
 
-  return (
-    <div className="App">
-      <h1>{header}</h1>
-      <h2>{counter}</h2>
-      <button onClick={() => dispatch(increment(3))}>+</button>
-      <button onClick={() => dispatch(decrement(5))}>-</button>
-    </div>
-  );
-}
 
-export default App;
+export default class App extends Component {
+  constructor(props) {
+    super(props)
+    //////////////////////////////
+    // state exclusive to App.jsx
+    //////////////////////////////
+    this.state = {
+      nonStoreState: true
+    };
+    /////////
+    // bind
+    /////////
+    // example this._functionName = this._functionName.bind(this);
+    ////////////////////////////////////////////////////////////////
+  };
+
+  componentDidMount() {
+    console.log('by Matthew Carpenter')
+  };
+
+  render() {
+
+    ////////////////////////////////////////////
+    // return a single element <div> is default
+    ////////////////////////////////////////////
+    return (
+      <div className="app_root">
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => <Home />}
+          />
+
+          {/* DO NOT ADD CODE BELOW THIS LINE */}
+          <Route
+						render={() =>
+							<Error user={this.state.user} />} />
+        </Switch>
+      </div>
+    )
+  };
+};

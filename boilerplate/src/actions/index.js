@@ -1,20 +1,6 @@
-export const increment = (num) => {
-    return {
-        type: 'INCREMENT',
-        payload: num
-    };
-};
+///////////////////////////////////////
+// export all or deconstructed actions
+///////////////////////////////////////
 
-export const decrement = (num) => {
-    return {
-        type: 'DECREMENT',
-        payload: num
-    };
-};
-
-export const header = (str) => {
-    return {
-        type: 'HEADER',
-        payload: str
-    }
-};
+export * from './counter_actions';
+export * from './header_actions';
