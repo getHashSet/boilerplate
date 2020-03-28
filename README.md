@@ -31,7 +31,11 @@ Custom React Boilerplate.
 
 ```
 npx create-react-app
+npm init -y
 npm install redux react-redux
+npm install react-router-dom
+npm install aws-sdk
+npm install axios
 ```
 
 ## .gitignore & .env

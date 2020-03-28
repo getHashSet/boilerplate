@@ -6,7 +6,6 @@ export default function Error(props) {
     //////////////////////////////////
     // stage variables from the store
     //////////////////////////////////
-    const counter = useSelector(state => state.counter);
     const dispatch = useDispatch();
     const header = useSelector(state => state.headerTag);
 
