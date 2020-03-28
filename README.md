@@ -29,13 +29,15 @@ Custom React Boilerplate.
 
 ## Get Started
 
+From the Root level of your applicaiton enter each of these into the command line interface (CLI).
+
 ```
-npx create-react-app
-npm init -y
-npm install redux react-redux
-npm install react-router-dom
-npm install aws-sdk
-npm install axios
+$ npx create-react-app
+$ npm init -y
+$ npm install redux react-redux
+$ npm install react-router-dom
+$ npm install aws-sdk
+$ npm install express morgan path axios body-parser
 ```
 
 ## .gitignore & .env
@@ -46,11 +48,11 @@ Be sure to use the .env file in the root directory.
 
 store is set up in the index.js file within boilerplate>src>index.js
 
-Step 1: Go to reducers folder and create a new reducer folder and index file. `boilerplate>src>reducers>`;
+**Step 1**: Go to reducers folder and create a new reducer folder and index file. `boilerplate>src>reducers>`;
 
-Step 2: `create new folder` `add index.js to that folder` *(example: isLoggedIn.js)*
+**Step 2**: `create new folder` `add index.js to that folder` *(example: isLoggedIn.js)*
 
-Step 3: Using the following code as a template you must set the default state of the new object.
+**Step 3**: Using the following code as a template you must set the default state of the new object.
 
 ```javascript
 const loggedReducer = (state = false, action) => {
@@ -67,15 +69,15 @@ export default loggedReducer;
 
 Be sure to add a default value.
 
-Step 4: Navigate to the reducers index file. `boilerplate>src>reducers>index.js`
+**Step 4**: Navigate to the reducers index file. `boilerplate>src>reducers>index.js`
 
-Step 5: import your new state file.
+**Step 5**: import your new state file.
 ```javascript
 // this file can have any name you would like. I have chosen loggedReducer as an example.
 import loggedReducer from './isLoggedIn';
 ```
 
-Step 6: Add this variable to the default store object.
+**Step 6**: Add this variable to the default store object.
 ```javascript
 // option 1
 // the value within the state is now 'counter: 0, isLoggedIn: false'
@@ -95,4 +97,19 @@ const allReducers = combineReducers({
 });
 ```
 
-Step 7: Verify default state in Google Chrome.
+**Last Step**: Verify default state in Google Chrome.
+
+## Re-Name boilerplate
+
+If you choose to change the name of boilerplate at the root level. Be sure to change the name within server.js in the root directory.
+
+```javascript
+// ======================= //
+// ====== React App ====== //
+// ======================= //
+
+app.get("*", (req, res) => {
+	res.sendFile(path.join(__dirname, "./boilerplate/build/index.html")); // if you change the name of the react app be sure to change it here.
+});
+
+```
