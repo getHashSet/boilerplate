@@ -3,7 +3,7 @@
 //////////////////////////////////////
 
 import React, { Component } from 'react'; // To use components from React library.
-import { Route, Switch, Redirect } from 'react-router-dom'; // To use react friendly navigation.
+import { Route, Switch } from 'react-router-dom'; // To use react friendly navigation.
 import Home from './pages/Home'; // stage home page.
 import Error from './pages/Error'; // stage 404 page.
 
