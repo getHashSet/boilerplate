@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const exampleController = require("./example.controller");
+const apiController = require("./api.controller");
 
-// router.use("/api/example", exampleController);
+router.use("/api", apiController);
 
 module.exports = router;

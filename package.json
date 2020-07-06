@@ -1,0 +1,53 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "*by Matthew Carpenter*",
+  "main": "server.js",
+  "scripts": {
+    "start": "npm run start:prod",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon server.js --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "seed": "node utils/scripts/seeds.js",
+    "prod": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getHashSet/boilerplate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/getHashSet/boilerplate/issues"
+  },
+  "homepage": "https://github.com/getHashSet/boilerplate#readme",
+  "dependencies": {
+    "concurrently": "^5.2.0",
+    "aws-sdk": "^2.663.0",
+    "axios": "^0.19.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.2",
+    "connect-mongo": "^3.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^4.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.9.10",
+    "morgan": "^1.8.2",
+    "multer": "^1.4.2",
+    "nodemailer": "^6.4.2",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "react-icons": "^3.10.0",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.1.2",
+    "react-script": "^2.0.5",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^5.1.0"
+  }
+}
