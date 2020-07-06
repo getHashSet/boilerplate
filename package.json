@@ -10,7 +10,7 @@
     "client": "cd client && npm run start",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
-    "seed": "node utils/scripts/seeds.js",
+    "seed": "node server_utilities/seed_files/seeds.js",
     "prod": "node server.js"
   },
   "repository": {
